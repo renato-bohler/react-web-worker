@@ -1,31 +1,27 @@
 import React from 'react';
 import './App.css';
 
-import worker from './app.worker.js';
 import WebWorker from './WebWorker';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { count: 0 };
+    this.worker = new WebWorker();
   }
 
   componentDidMount() {
-    this.worker = new WebWorker(worker);
-
-    this.worker.addEventListener('message', event => {
-      console.log('[REACT] Message received:', event.data);
+    this.worker.addCallback(event => {
+      console.log('[REACT] Callback received:', event.data);
       this.setState({ count: event.data });
     });
 
-    setTimeout(
-      () =>
-        this.worker.postMessage('react => worker message content'),
-      1000,
-    );
+    this.worker.stop();
   }
 
   render() {
+    const { count } = this.state;
+
     console.timeEnd('Render');
     console.time('Render');
     console.log('[REACT] Rendering...', {
@@ -35,9 +31,37 @@ export default class App extends React.Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <p>{this.state.count}</p>
-        </header>
+        <main>
+          <header>
+            <p>This countup is being executed by a Web Worker.</p>
+            <p>
+              It counts to infinity and synchronizes it before every
+              browser render.
+            </p>
+          </header>
+          <p>{count}</p>
+          <button
+            type="button"
+            onClick={() => this.worker.start()}
+            disabled={this.worker.isRunning()}
+          >
+            Start
+          </button>
+          <button
+            type="button"
+            onClick={() => this.worker.pause()}
+            disabled={!this.worker.isRunning()}
+          >
+            Pause
+          </button>
+          <button
+            type="button"
+            onClick={() => this.worker.stop()}
+            disabled={this.worker.isStopped()}
+          >
+            Stop
+          </button>
+        </main>
       </div>
     );
   }
