@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "https://renato-bohler.github.io/react-web-worker/static/css/main.be196e3f.chunk.css",
+    "main.js": "https://renato-bohler.github.io/react-web-worker/static/js/main.753407b4.chunk.js",
+    "main.js.map": "https://renato-bohler.github.io/react-web-worker/static/js/main.753407b4.chunk.js.map",
+    "runtime-main.js": "https://renato-bohler.github.io/react-web-worker/static/js/runtime-main.756d3656.js",
+    "runtime-main.js.map": "https://renato-bohler.github.io/react-web-worker/static/js/runtime-main.756d3656.js.map",
+    "static/js/2.fbe7aa74.chunk.js": "https://renato-bohler.github.io/react-web-worker/static/js/2.fbe7aa74.chunk.js",
+    "static/js/2.fbe7aa74.chunk.js.map": "https://renato-bohler.github.io/react-web-worker/static/js/2.fbe7aa74.chunk.js.map",
+    "index.html": "https://renato-bohler.github.io/react-web-worker/index.html",
+    "precache-manifest.ceed428d696022519ebc8075eff3313e.js": "https://renato-bohler.github.io/react-web-worker/precache-manifest.ceed428d696022519ebc8075eff3313e.js",
+    "service-worker.js": "https://renato-bohler.github.io/react-web-worker/service-worker.js",
+    "static/css/main.be196e3f.chunk.css.map": "https://renato-bohler.github.io/react-web-worker/static/css/main.be196e3f.chunk.css.map",
+    "static/js/2.fbe7aa74.chunk.js.LICENSE.txt": "https://renato-bohler.github.io/react-web-worker/static/js/2.fbe7aa74.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.756d3656.js",
+    "static/js/2.fbe7aa74.chunk.js",
+    "static/css/main.be196e3f.chunk.css",
+    "static/js/main.753407b4.chunk.js"
+  ]
+}
